@@ -17,7 +17,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="toggleDark">Dark Mode</button>
+            <button id="toggleDark">☾</button>
         </nav>
         <main>
             <section id="about">
@@ -120,7 +120,7 @@
 
         </aside>
         <footer>
-            <p>All Rights Reserved</p>
+            <p>All Rights Reserved &reg</p>
             <a href="#contact">Contact</a>
         </footer>
         <script>
@@ -129,11 +129,11 @@
             toggleButton.addEventListener('click', function() {
                 document.body.classList.toggle('dark-mode');
                 if (stat == 0) {
-                    toggleButton.textContent = "Light Mode";
+                    toggleButton.textContent = "🔅";
                     stat = 1
                 }
                 else {
-                    toggleButton.textContent = "Dark Mode";
+                    toggleButton.textContent = "☾";
                     stat = 0
                 }
             });
