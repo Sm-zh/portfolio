@@ -1,0 +1,341 @@
+:root {
+    --main-color: rgb(120, 200, 255);
+    --light: #ccc;
+    --dark: #002244;
+    --darker: #001122;
+    --link: #1e90ff;
+    --link-hover: #202020;
+    --link-d: var(--main-color);
+    --link-d-hover: #ffa500;
+}
+
+@media (max-width: 768px) {
+    nav {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .myForm {
+        width: 90%;
+    }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'footer';
+    column-gap: 40px;
+    align-content: space-between;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: var(--dark);
+}
+
+header {
+    grid-area: header;
+    padding: 20px;
+    background-color: var(--light);
+    filter: brightness(0.8);
+}
+
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: var(--light);
+}
+
+nav ul {
+    grid-column: 2 / 3;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav button {
+    width: 50px;
+    height: 50px;
+    justify-self: end;
+    padding: 0;
+    border: solid 2px  var(--dark);
+    border-radius: 50%;
+    background-color: var(--light);
+    color: var(--dark);
+    font-size: large;
+}
+
+nav button:hover {
+    border-color: var(--dark);
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+main {
+    grid-area: main;
+}
+
+section {
+    padding: 20px;
+    border-radius: 35px;
+    margin: 40px 20px;
+    background-color: var(--light);
+}
+
+#about p {
+    padding-left: 20px;
+}
+
+#about a {
+    color: var(--link);
+}
+
+#about a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+#skill-div {
+    padding: 20px;
+}
+
+.project {
+    padding: 20px;
+    border-bottom: solid 2px var(--dark);
+}
+
+.project-link {
+    height: min-content;
+}
+
+.project-link a {
+    justify-self: center;
+}
+
+img {
+    width: 1em;
+    vertical-align: middle;
+}
+
+#contact {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    grid-template-columns: max-content max-content;
+    column-gap: 40px;
+}
+
+#contact #info {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#contact #send-message {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#info {
+    padding: 0 20px;
+    border-right: solid 2px var(--dark);
+}
+
+.myForm {
+    width: fit-content;
+    padding: 20px 50px;
+    border: solid 2px white;
+    border-radius: 15px;
+    margin: 16px 0;
+    background-color: white;
+}
+
+.myForm label {
+    display: block;
+}
+
+.myForm input[type="text"],.myForm input[type="email"] {
+    width: 250px;
+    height: 30px;
+    border: solid 2px var(--light);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.myForm textarea {
+    height: fit-content;
+    border: solid 2px var(--light);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.myForm input[type="submit"] {
+    border: solid 2px var(--dark);
+    border-radius: 5px;
+    background-color: white;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.myForm input[type="submit"]:hover {
+    border-top: solid 2px var(--dark);
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 40px;
+    background-color: var(--light  );
+}
+
+footer p {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    color: var(--dark);
+}
+
+h2 {
+    margin: 0 0 20px 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+h4 {
+    margin: 0 0 10px 0;
+}
+
+a {
+    padding: 5px;
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: solid 2px var(--link-hover);
+    border-radius: 10px;
+    color: var(--link-hover);
+}
+
+body.dark-mode {
+   background: linear-gradient(to bottom, var(--dark), #000);
+   color: var(--dark-c);
+}
+
+body.dark-mode header {
+    background-color: var(--darker);
+}
+
+body.dark-mode nav {
+    background-color: var(--darker);
+}
+
+body.dark-mode nav button:hover {
+    background-color: var(--main-color);
+    color: var(--dark);
+}
+
+body.dark-mode section {
+    background-color: var(--darker);
+    color: var(--light);
+}
+
+body.dark-mode #about a {
+    color: var(--link-d);
+}
+
+body.dark-mode #about a:hover {
+    border-bottom-color: var(--link-d-hover);
+    color: var(--link-d-hover);
+}
+
+body.dark-mode .project {
+    border-bottom-color: var(--light);
+}
+
+body.dark-mode #info {
+    border-right-color: var(--light);
+}
+
+body.dark-mode .myForm {
+    border-color: var(--dark);
+    background-color: var(--dark);
+}
+
+body.dark-mode input[type="text"],body.dark-mode input[type="email"] {
+    border-color: var(--darker);
+    background-color: var(--darker); 
+    color: var(--light);  
+}
+
+body.dark-mode textarea {
+    border-color: var(--darker);
+    background-color: var(--darker);
+    color: var(--light);
+}
+
+body.dark-mode input[type="submit"] {
+    border-color: var(--main-color);
+    background-color: var(--dark);
+    color: var(--main-color);
+}
+
+body.dark-mode input[type="submit"]:hover {
+    background-color: var(--main-color);
+    color: var(--dark);
+}
+
+body.dark-mode footer {
+    background-color: var(--darker);
+    color: var(--light);
+}
+
+body.dark-mode h1 {
+    color: var(--light);
+}
+
+body.dark-mode a {
+    color: var(--link-d);
+}
+
+body.dark-mode a:hover {
+    border-bottom-color: var(--link-d-hover);
+    color: var(--link-d-hover);
+}
+
+body.dark-mode button {
+    border-color: var(--main-color);
+    background-color: var(--dark);
+    color: var(--main-color);
+}
