@@ -9,45 +9,31 @@
     --link-d-hover: #ffa500;
 }
 
-@media (max-width: 768px) {
-    nav {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    .myForm {
-        width: 90%;
-    }
-}
-
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
+    width: 100%;
     display: grid;
     grid-template-areas:
     'header'
     'nav'
     'main'
     'footer';
-    column-gap: 40px;
     align-content: space-between;
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
     background-color: white;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     color: var(--dark);
 }
 
 header {
     grid-area: header;
-    padding: 20px;
+    padding: 1vw;
     background-color: var(--light);
     filter: brightness(0.8);
 }
@@ -58,8 +44,8 @@ nav {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
-    padding: 20px;
-    margin-bottom: 40px;
+    padding: 1vw;
+    margin-bottom: 2vw;
     background-color: var(--light);
 }
 
@@ -72,25 +58,15 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 0.5vw;
 }
 
-nav button {
-    width: 50px;
-    height: 50px;
+#toggleDark {
+    grid-column: 3 / 4;
     justify-self: end;
-    padding: 0;
-    border: solid 2px  var(--dark);
-    border-radius: 50%;
-    background-color: var(--light);
-    color: var(--dark);
-    font-size: large;
-}
-
-nav button:hover {
-    border-color: var(--dark);
-    background-color: var(--dark);
-    color: var(--light);
+    width: 3vw;
+    height: 3vw;
+    font-size: 20px;
 }
 
 main {
@@ -98,14 +74,14 @@ main {
 }
 
 section {
-    padding: 20px;
-    border-radius: 35px;
-    margin: 40px 20px;
+    padding: 2vw;
+    border-radius: 2vw;
+    margin: 2vw;
     background-color: var(--light);
 }
 
 #about p {
-    padding-left: 20px;
+    padding-left: 1vw;
 }
 
 #about a {
@@ -118,12 +94,12 @@ section {
 }
 
 #skill-div {
-    padding: 20px;
+    padding: 1vw;
 }
 
 .project {
-    padding: 20px;
-    border-bottom: solid 2px var(--dark);
+    padding: 1vw;
+    border-bottom: solid 0.1vw var(--dark);
 }
 
 .project-link {
@@ -141,9 +117,9 @@ img {
 
 #contact {
     display: grid;
-    grid-template-rows: max-content max-content;
-    grid-template-columns: max-content max-content;
-    column-gap: 40px;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: min-content min-content;
+    column-gap: 2vw;
 }
 
 #contact #info {
@@ -155,16 +131,16 @@ img {
 }
 
 #info {
-    padding: 0 20px;
+    padding: 0 1vw;
     border-right: solid 2px var(--dark);
 }
 
 .myForm {
     width: fit-content;
-    padding: 20px 50px;
-    border: solid 2px white;
-    border-radius: 15px;
-    margin: 16px 0;
+    padding: 1vw 2.5vw;
+    border: solid 0.1vw white;
+    border-radius: 0.75vw;
+    margin: 0.8vw 0;
     background-color: white;
 }
 
@@ -172,35 +148,28 @@ img {
     display: block;
 }
 
-.myForm input[type="text"],.myForm input[type="email"] {
-    width: 250px;
-    height: 30px;
-    border: solid 2px var(--light);
-    border-radius: 5px;
-    margin-bottom: 10px;
+.myForm input, textarea {
+    border: solid 0.1vw var(--light);
+    border-radius: 0.75em;
+    margin-bottom: 0.5vw;
     background-color: var(--light);
     color: var(--dark);
+}
+
+.myForm input[type="text"],.myForm input[type="email"], textarea {
+    height: 1.5rem;
 }
 
 .myForm textarea {
-    height: fit-content;
-    border: solid 2px var(--light);
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: var(--light);
-    color: var(--dark);
+    height: 5vw;
 }
 
 .myForm input[type="submit"] {
-    border: solid 2px var(--dark);
-    border-radius: 5px;
-    background-color: white;
-    background-color: var(--light);
-    color: var(--dark);
+    border-color: var(--dark);
+    border-radius: 0.5em;
 }
 
 .myForm input[type="submit"]:hover {
-    border-top: solid 2px var(--dark);
     background-color: var(--dark);
     color: var(--light);
 }
@@ -210,8 +179,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin-top: 40px;
+    padding: 0.5vw;
+    margin-top: 2vw;
     background-color: var(--light  );
 }
 
@@ -225,7 +194,7 @@ h1 {
 }
 
 h2 {
-    margin: 0 0 20px 0;
+    margin: 0 0 1vw 0;
 }
 
 h3 {
@@ -233,19 +202,32 @@ h3 {
 }
 
 h4 {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.5vw 0;
 }
 
 a {
-    padding: 5px;
+    padding: 0.25vw;
     color: var(--link);
     text-decoration: none;
 }
 
 a:hover {
-    border-bottom: solid 2px var(--link-hover);
-    border-radius: 10px;
+    border-bottom: solid 0.1vw var(--link-hover);
+    border-radius: 0.5vw;
     color: var(--link-hover);
+}
+
+button {
+    padding: 0;
+    border: solid 0.1vw var(--dark);
+    border-radius: 50%;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+button:hover {
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 body.dark-mode {
@@ -259,11 +241,6 @@ body.dark-mode header {
 
 body.dark-mode nav {
     background-color: var(--darker);
-}
-
-body.dark-mode nav button:hover {
-    background-color: var(--main-color);
-    color: var(--dark);
 }
 
 body.dark-mode section {
@@ -338,4 +315,48 @@ body.dark-mode button {
     border-color: var(--main-color);
     background-color: var(--dark);
     color: var(--main-color);
+}
+
+body.dark-mode button:hover {
+    background-color: var(--main-color);
+    color: var(--dark);
+}
+
+@media (width <= 426px) {
+    body {
+        font-size: 0.8rem;
+    }
+
+    nav {
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+    }
+
+    nav ul {
+        grid-column: 1 / 2;
+    }
+
+    #toggleDark {
+        grid-column: 2 / 3;
+        width: 5vw;
+        height: 5vw;
+        margin: 1vw;
+        font-size: 10px;
+    }
+
+    #toggleDark:hover {
+        border-color: var(--dark);
+        background-color: var(--light);
+        color: var(--dark);
+    }   
+
+    body.dark-mode #toggleDark:hover {
+        border-color: var(--main-color);
+        background-color: var(--darker);
+        color: var(--dark);
+    }
+
+    #contact {
+        display: block;
+    }
 }
